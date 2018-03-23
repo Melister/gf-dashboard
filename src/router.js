@@ -2,25 +2,32 @@ import React from 'react';
 import {BrowserRouter as Router,Route,Switch,} from 'react-router-dom';
 import { connect } from 'react-redux';
 
-//Reactstrap components
-import {Container} from 'reactstrap';
-
 //App components
 import Header from "./components/layout/Header/Header";
 import Sidebar from "./components/layout/Sidebar/Sidebar";
-import Breadcrumb from "./components/layout/Breadcrumb/Breadcrumb";
-import Aside from "./components/layout/Aside/Aside";
-import Footer from "./components/layout/Footer/Footer";
-
 
 //App components
-import PeopleContainer from './containers/people_container';
+import PeopleHomeContainer from './containers/people/people_home_container';
+import PeopleSkillsContainer from "./containers/people/people_skills_container";
+import HomeContainer from "./containers/home/home_container";
 const routes = [
+    {
+        name: 'Home',
+        exact: true,
+        path: '/',
+        component: HomeContainer
+    },
     {
         name: 'People',
         exact: true,
         path: '/people',
-        component: PeopleContainer,
+        component: PeopleHomeContainer
+    },
+    {
+        name: 'PeopleSkills',
+        exact: true,
+        path: '/people/peopleskills',
+        component: PeopleSkillsContainer
     }
 ];
 
@@ -28,7 +35,7 @@ const routes = [
 
 const MyRouter = connect()( () => {
     return (
-        <Router >
+        <Router path="/">
             <div className="app">
                 <Header />
                 <div className="app-body">
