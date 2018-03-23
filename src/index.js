@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import store from './store/store';
+import MyRouter from './router';
+
+import "../node_modules/font-awesome/css/font-awesome.min.css";
+import "./styles/main.css";
+
+const App = (
+    <Provider store={store}>
+            <MyRouter />
+    </Provider>
+);
+ReactDOM.render( App, document.getElementById('root') );
 registerServiceWorker();
