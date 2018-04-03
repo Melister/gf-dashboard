@@ -7,6 +7,7 @@ import store from './store/store';
 import MyRouter from './router';
 
 import "../node_modules/font-awesome/css/font-awesome.min.css";
+import 'react-table/react-table.css'
 import "./styles/main.css";
 
 const App = (
