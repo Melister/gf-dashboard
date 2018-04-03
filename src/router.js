@@ -6,10 +6,13 @@ import { connect } from 'react-redux';
 import Header from "./components/layout/Header/Header";
 import Sidebar from "./components/layout/Sidebar/Sidebar";
 
-//App components
+//App containers
 import PeopleHomeContainer from './containers/people/people_home_container';
 import PeopleSkillsContainer from "./containers/people/people_skills_container";
 import HomeContainer from "./containers/home/home_container";
+import ReportContainer from "./containers/report/report_container";
+
+
 const routes = [
     {
         name: 'Home',
@@ -28,6 +31,12 @@ const routes = [
         exact: true,
         path: '/people/peopleskills',
         component: PeopleSkillsContainer
+    },
+    {
+        name: 'Report',
+        exact: true,
+        path:'/people/report',
+        component: ReportContainer
     }
 ];
 
@@ -47,9 +56,7 @@ const MyRouter = connect()( () => {
                             </Switch>
                         </div>
                     </main>
-
                 </div>
-
             </div>
         </Router>
     )

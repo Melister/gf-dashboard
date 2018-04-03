@@ -9,11 +9,6 @@ export default {
             name: 'People',
             url: '/people',
             icon: 'fa fa-id-card'
-        },
-        {
-            name: 'Reports',
-            url: '/reports',
-            icon: 'fa fa-file'
         }
     ]
 };
